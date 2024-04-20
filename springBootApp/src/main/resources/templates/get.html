@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update User</title>
+</head>
+<body>
+<form th:method = "POST" th:action="@{'/users/get?id=' + ${userForUpdate.id}}" th:object="${userForUpdate}">
+    <input type = "hidden" th:field="*{id}"/>
+    <label for="name">Input name: </label>
+    <input type = "text" th:field = "*{name}" id = "name" th:value="${userForUpdate.name}"/>
+    <br/>
+    <label for="lastName">Input lastName: </label>
+    <input type = "text" th:field = "*{lastName}" id = "lastName" th:value="${userForUpdate.lastName}"/>
+    <br/>
+    <label for="email">Input email: </label>
+    <input type = "text" th:field = "*{email}" id = "email" th:value="${userForUpdate.email}"/>
+    <button type = "submit">Click to update user</button>
+</form>
+</body>
+</html>
